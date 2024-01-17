@@ -1,25 +1,24 @@
 import {useEffect, useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import {rickAndMortyData} from "./rickAndMortyData"
 
 function App() {
+
+    // setData not used but included due to task requirements
     const [data, setData] = useState(rickAndMortyData)
     const [searchInput, setSearchInput] = useState("")
     const [limit, setLimit] = useState(5)
 
     const [filteredCharacters, setFilteredCharacters] = useState(data.results);
 
-    const onSearch = (input) => {
+    const onSearch = (input): void => {
         setSearchInput(input.target.value)
     }
 
-    const increaseLimit = () => {
+    const increaseLimit: void = () => {
         setLimit(limit + 5)
     }
 
-    useEffect(() => {
+    useEffect((): void => {
         setFilteredCharacters(data.results
             .filter(character => character.name.toLowerCase().trim().includes(searchInput.toLowerCase().trim()))
             .slice(0, limit))
@@ -27,7 +26,7 @@ function App() {
     }, [searchInput, limit])
 
     return (
-        <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <div style={{display: "flex", flexDirection: "column", alignItems: "center", marginTop: "2rem"}}>
             <input onChange={onSearch} placeholder="Search character..." value={searchInput} type="text"/>
             <div style={{
                 width: "100vw",
