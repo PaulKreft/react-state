@@ -10,8 +10,8 @@ function App() {
 
     const [filteredCharacters, setFilteredCharacters] = useState(data.results);
 
-    const onSearch = (input): void => {
-        setSearchInput(input.target.value)
+    const onSearch = (event: ChangeEvent<HTMLInputElement>): void => {
+        setSearchInput(event.target.value)
     }
 
     const increaseLimit: void = () => {
