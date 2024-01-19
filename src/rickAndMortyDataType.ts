@@ -1,4 +1,4 @@
-import {RickAndMortyCharacter} from "./rickAndMortyCharacter"
+import {RickAndMortyCharacter} from "./rickAndMortyCharacter.ts"
 
 export type RickAndMortyDataType = {
     info: {

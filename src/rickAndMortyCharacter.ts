@@ -1,4 +1,4 @@
-export type RickAndMortyCharacter = {
+export declare type RickAndMortyCharacter = {
     id: number,
     name: string,
     status: string,
@@ -10,5 +10,6 @@ export type RickAndMortyCharacter = {
     image: string,
     episode: string[],
     url: string,
-    created: string
+    created: string,
+    comments: string[],
 }
